@@ -1,0 +1,4 @@
+exports/*
+oracle/instantclient_*
+**/*.txt
+**/*.csv

@@ -1,0 +1,54 @@
+
+SQL*Loader: Release 12.2.0.1.0 - Production on Wed Oct 10 15:03:39 2018
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   C:\Users\edwardk3\PortableApps\linux\.babun\cygwin\home\edwardk3\workspace\monarch\prj_onetimer\projects\sw_active_io\sqlldr.ctl
+Data File:      PRJ_ONETIMER_SW_ACTIVE_IO.csv
+  Bad File:     C:\Users\edwardk3\PortableApps\linux\.babun\cygwin\home\edwardk3\workspace\monarch\prj_onetimer\projects\sw_active_io\sqlldr.bad
+  Discard File: C:\Users\edwardk3\PortableApps\linux\.babun\cygwin\home\edwardk3\workspace\monarch\prj_onetimer\projects\sw_active_io\sqlldr.dsc 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table SRC_PRJ_ONETIMER_SW_ACTIVE_IO, loaded from every logical record.
+Insert option in effect for this table: TRUNCATE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+PROJECT_ID                          FIRST     *   ,  O(") CHARACTER            
+PROJECT_NAME                         NEXT     *   ,  O(") CHARACTER            
+DESCRIPTION                          NEXT     *   ,  O(") CHARACTER            
+START_DATE                           NEXT     *   ,  O(") CHARACTER            
+END_DATE                             NEXT     *   ,  O(") CHARACTER            
+STATUS                               NEXT     *   ,  O(") CHARACTER            
+PROJECT_HIERARCHY                    NEXT     *   ,  O(") CHARACTER            
+COMPANY                              NEXT     *   ,  O(") CHARACTER            
+
+
+Table SRC_PRJ_ONETIMER_SW_ACTIVE_IO:
+  3459 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 132096 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:          3459
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Wed Oct 10 15:03:39 2018
+Run ended on Wed Oct 10 15:03:49 2018
+
+Elapsed time was:     00:00:10.14
+CPU time was:         00:00:00.38
