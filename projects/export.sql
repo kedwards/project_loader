@@ -20,7 +20,12 @@ select project_id
   , 'Y' include_code_in_name
   , 'FIN' src
 from (
-    select a.project_id, a.project_name, a.description, a.start_date, a.end_date, cast(null as varchar2(1)) currency
+    select a.project_id, a.project_name, a.description, a.start_date, a.end_date
+    , case project_hierarchy
+        when 'Spectra East Projects' then 'CAD'
+        when 'Spectra West Projects' then 'CAD'
+        when 'Spectra USA Projects' then 'USD'
+    end as currency
     , case project_hierarchy
         when 'Spectra East Projects' then 'LSE_East_Projects'
         when 'Spectra West Projects' then 'LSE_West_Projects'
@@ -29,10 +34,21 @@ from (
     end as project_hierarchy
     from src_prj_onetimer_se_active_io a
     union all
-    select b.project_id, b.project_name, b.description, b.start_date, b.end_date, cast(null as varchar2(1)) currency, null project_hierarchy
+    select b.project_id, b.project_name, b.description, b.start_date, b.end_date
+    , case project_hierarchy
+        when 'Spectra East Projects' then 'CAD'
+        when 'Spectra West Projects' then 'CAD'
+        when 'Spectra USA Projects' then 'USD'
+    end as currency
+    , null project_hierarchy
     from src_prj_onetimer_se_active_wbs b
     union all
-    select c.project_id, c.project_name, c.description, c.start_date, c.end_date, cast(null as varchar2(1)) currency
+    select c.project_id, c.project_name, c.description, c.start_date, c.end_date
+    , case project_hierarchy
+        when 'Spectra East Projects' then 'CAD'
+        when 'Spectra West Projects' then 'CAD'
+        when 'Spectra USA Projects' then 'USD'
+    end as currency
     , case project_hierarchy
         when 'Spectra East Projects' then 'LSE_East_Projects'
         when 'Spectra West Projects' then 'LSE_West_Projects'
@@ -41,7 +57,12 @@ from (
     end as project_hierarchy
     from src_prj_onetimer_sw_active_io c
     union all
-    select d.project_id, d.project_name, d.description, d.start_date, d.end_date, cast(null as varchar2(1)) currency
+    select d.project_id, d.project_name, d.description, d.start_date, d.end_date
+    , case project_hierarchy
+        when 'Spectra East Projects' then 'CAD'
+        when 'Spectra West Projects' then 'CAD'
+        when 'Spectra USA Projects' then 'USD'
+    end as currency
     , case project_hierarchy
         when 'Spectra East Projects' then 'LSE_East_Projects'
         when 'Spectra West Projects' then 'LSE_West_Projects'
@@ -50,7 +71,12 @@ from (
     end as project_hierarchy
     from src_prj_onetimer_sw_active_nw d
     union all
-    select f.project_id, f.project_name, f.description, f.start_date, f.end_date, cast(null as varchar2(1)) currency
+    select f.project_id, f.project_name, f.description, f.start_date, f.end_date
+    , case project_hierarchy
+        when 'Spectra East Projects' then 'CAD'
+        when 'Spectra West Projects' then 'CAD'
+        when 'Spectra USA Projects' then 'USD'
+    end as currency
     , case project_hierarchy
         when 'Spectra East Projects' then 'LSE_East_Projects'
         when 'Spectra West Projects' then 'LSE_West_Projects'
